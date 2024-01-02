@@ -1,6 +1,6 @@
 #!/bin/sh
-export picodir=/mnt/SDCARD/App/pico
-export picoconfig=$picodir/.lexaloffle/
+export picodir=/mnt/SDCARD/Apps/pico.pak
+export picoconfig="$picodir"/.lexaloffle/
 export sysdir=/mnt/SDCARD/.tmp_update
 export miyoodir=/mnt/SDCARD/miyoo
 cd $picodir
@@ -146,7 +146,7 @@ libpadspblocker() {
 }
 
 start_pico() {
-    export LD_LIBRARY_PATH="$picodir/lib:/lib:/config/lib:/mnt/SDCARD/miyoo/lib:/mnt/SDCARD/.tmp_update/lib:/mnt/SDCARD/.tmp_update/lib/parasyte:/sbin:/usr/sbin:/bin:/usr/bin"
+    export LD_LIBRARY_PATH="$picodir/lib:/lib:/config/lib:/mnt/SDCARD/miyoo/lib:/mnt/SDCARD/.tmp_update/lib:/mnt/SDCARD/.tmp_update/lib/parasyte:/sbin:/usr/sbin:/bin:/usr/bin:$LD_LIBRARY_PATH"
     export SDL_VIDEODRIVER=mmiyoo
     export SDL_AUDIODRIVER=mmiyoo
     export EGL_VIDEODRIVER=mmiyoo
