@@ -4,7 +4,7 @@ export picoconfig="$picodir"/.lexaloffle/
 export sysdir=/mnt/SDCARD/.tmp_update
 export miyoodir=/mnt/SDCARD/miyoo
 cd $picodir
-export PATH=$PATH:$PWD/bin
+export PATH="$PWD/bin:$PATH"
 export HOME=$picodir
 
 get_curvol() {
