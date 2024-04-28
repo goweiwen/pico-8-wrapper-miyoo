@@ -162,9 +162,9 @@ main() {
     echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     curvol=$(get_curvol) 
     curmute=$(get_curmute)
-    mount --bind /mnt/SDCARD/Roms/PICO /mnt/SDCARD/App/pico/.lexaloffle/pico-8/carts
+    mount --bind /mnt/SDCARD/Roms/PICO /mnt/SDCARD/Apps/pico.pak/.lexaloffle/pico-8/carts
     start_pico
-    umount /mnt/SDCARD/App/pico/.lexaloffle/pico-8/carts
+    umount /mnt/SDCARD/Apps/pico.pak/.lexaloffle/pico-8/carts
     echo ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 }
 
