@@ -28,11 +28,12 @@ A wrapper to run Pico-8 natively on the Miyoo Mini/Miyoo Mini Plus.
 7. [Changelog](#changelog)
 8. [Releases](https://github.com/XK9274/pico-8-wrapper-miyoo/releases)
 9. [SDL Source](https://github.com/XK9274/sdl2_miyoo/tree/pico8)
+10. [Building](#building)
 
 <a name="installation"></a>
 ## Installation
 - Drag the app folder from the releases page into `/mnt/SDCARD/App/` (so it becomes `/mnt/SDCARD/App/pico`). Warning: If you use FTP and Filezilla, you must set your transfer type to binary or it will corrupt binaries on transfer.
-- Drag your RASPBERRY PI `pico8_dyn` and `pico8.dat` into `/mnt/SDCARD/App/pico/bin`. You can purchase Pico-8 [here](https://www.lexaloffle.com/pico-8.php).
+- Drag your RASPBERRY PI `pico8_dyn` and `pico8.dat` into `/mnt/SDCARD/App/pico/bin` (If the directory doesn't exist, you can create it). You can purchase Pico-8 [here](https://www.lexaloffle.com/pico-8.php). 
 
 <a name="features"></a>
 ## Features
@@ -144,6 +145,16 @@ A wrapper to run Pico-8 natively on the Miyoo Mini/Miyoo Mini Plus.
 ### v0.2
 - Audio.
 
+## Building SDL2 Libs
+<a name="building"></a>
+`git clone https://github.com/XK9274/pico-8-wrapper-miyoo`
+
+`cd pico-8-wrapper-miyoo`
+
+`make picosdl2`
+
+- If you have parasyte on your dist, you can comment out (in cmd.sh) `copy_lib "/root/workspace/sdl2_miyoo/libGLESv2.so" "$PICO_APP_DIR/pico/lib/libGLESv2.so"` to use a smaller lib & also make the dist smaller
+- Make sure your LD_LIBRARY_PATH in `pico/script/launch.sh` reflects the location of this library
 
 <a name="screenshots"></a>
 ## Screenshots
